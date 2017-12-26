@@ -1,0 +1,11 @@
+
+json2node.pornstar_entry_form:
+  path: '/admin/config/json2node/pornstarentry'
+  defaults:
+    _form: '\Drupal\json2node\Form\PornstarEntryForm'
+    _title: 'PornstarEntryForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

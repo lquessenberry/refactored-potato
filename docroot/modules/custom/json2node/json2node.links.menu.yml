@@ -1,0 +1,7 @@
+json2node.pornstar_entry_form:
+  title: 'PornstarEntryForm'
+  route_name: json2node.pornstar_entry_form
+  description: 'A description for the menu entry'
+  parent: system.admin_config_system
+  weight: 99
+

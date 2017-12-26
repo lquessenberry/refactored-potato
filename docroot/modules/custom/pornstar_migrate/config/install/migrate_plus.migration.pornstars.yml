@@ -1,0 +1,49 @@
+# Migration configuration for Pornstars.
+id: pornstar_json_migrate_2
+label: JSON feed of products
+migration_group: pornstars
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  # The URL of your JSON datasource
+  urls: https://www.pornhub.com/webmasters/stars_detailed
+  item_selector: stars
+  fields:
+    -
+      name: star_name
+      label: 'Actor Name'
+      selector: star/star_name
+    -
+      field_thumbnail: star_thumb
+      label: 'Thumbnail'
+      selector: star/star_thumb
+
+  ids:
+    star_name:
+      type: string
+
+destination:
+  plugin: entity:node
+
+process:
+  type:
+    plugin: default_value
+    default_value: pornstar
+
+  title: star_name
+  field_thumbnail: star_thumb
+
+  sticky:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 0
+
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - pornstar_migrate

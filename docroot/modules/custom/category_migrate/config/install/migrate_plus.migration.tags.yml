@@ -1,0 +1,37 @@
+# Migration configuration for Tags.
+id: categories_json_migrate
+label: JSON feed of categories
+migration_group: categories
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  # The URL of your JSON datasource
+  urls: https://www.pornhub.com/webmasters/categories
+
+  item_selector: categories
+  fields:
+    -
+      name: category
+      label: 'Category'
+      selector: category
+
+
+  ids:
+    tag_name:
+      type: string
+
+# Destination.
+destination:
+  plugin: 'entity:taxonomy_term'
+  # Vocabulary for the terms.
+  default_bundle: categories
+# Mappings.
+process:
+  name: category
+# Dependencies.
+dependencies:
+  enforced:
+    module:
+      - category_migrate

@@ -1,1 +1,1 @@
-{"nfs":{"/var/www":{"nfs":{"mount_options":["dmode=777","fmode=666"]},"guestpath":"/var/www","hostpath":"/Users/lquessenberry/Sites/cryptoporn","disabled":false,"type":"nfs","__vagrantfile":true,"map_uid":501,"map_gid":20,"nfs_udp":true,"nfs_version":3,"uuid":"1871450397"}}}
+{"nfs":{"/var/www":{"nfs":{"mount_options":["dmode=777","fmode=666"]},"guestpath":"/var/www","hostpath":"/Users/leequessenberry/Sites/pornhash","disabled":false,"type":"nfs","__vagrantfile":true,"map_uid":501,"map_gid":20,"nfs_udp":true,"nfs_version":3,"uuid":"870853067"}}}

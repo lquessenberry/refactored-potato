@@ -1,0 +1,5 @@
+name: json2node
+type: module
+description: Woopity do
+core: 8.x
+package: Custom
