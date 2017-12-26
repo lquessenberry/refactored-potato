@@ -1,0 +1,62 @@
+# Migration configuration for Tags.
+id: tags_json_migrate
+label: JSON feed of tags
+migration_group: tags
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  # The URL of your JSON datasource
+  urls:
+    - https://www.pornhub.com/webmasters/tags?list=a
+    - https://www.pornhub.com/webmasters/tags?list=b
+    - https://www.pornhub.com/webmasters/tags?list=c
+    - https://www.pornhub.com/webmasters/tags?list=d
+    - https://www.pornhub.com/webmasters/tags?list=e
+    - https://www.pornhub.com/webmasters/tags?list=f
+    - https://www.pornhub.com/webmasters/tags?list=g
+    - https://www.pornhub.com/webmasters/tags?list=h
+    - https://www.pornhub.com/webmasters/tags?list=i
+    - https://www.pornhub.com/webmasters/tags?list=j
+    - https://www.pornhub.com/webmasters/tags?list=k
+    - https://www.pornhub.com/webmasters/tags?list=l
+    - https://www.pornhub.com/webmasters/tags?list=m
+    - https://www.pornhub.com/webmasters/tags?list=n
+    - https://www.pornhub.com/webmasters/tags?list=o
+    - https://www.pornhub.com/webmasters/tags?list=p
+    - https://www.pornhub.com/webmasters/tags?list=q
+    - https://www.pornhub.com/webmasters/tags?list=r
+    - https://www.pornhub.com/webmasters/tags?list=s
+    - https://www.pornhub.com/webmasters/tags?list=t
+    - https://www.pornhub.com/webmasters/tags?list=u
+    - https://www.pornhub.com/webmasters/tags?list=v
+    - https://www.pornhub.com/webmasters/tags?list=w
+    - https://www.pornhub.com/webmasters/tags?list=x
+    - https://www.pornhub.com/webmasters/tags?list=y
+    - https://www.pornhub.com/webmasters/tags?list=z
+  item_selector: tags
+  fields:
+    -
+      name: tag_name
+      label: 'Tag'
+      selector: tag/tag_name
+
+
+  ids:
+    tag_name:
+      type: string
+
+# Destination.
+destination:
+  plugin: 'entity:taxonomy_term'
+  # Vocabulary for the terms.
+  default_bundle: tags
+# Mappings.
+process:
+  name: tag_name
+# Dependencies.
+dependencies:
+  enforced:
+    module:
+      - tag_migrate

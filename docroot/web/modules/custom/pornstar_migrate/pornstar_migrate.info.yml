@@ -1,0 +1,9 @@
+name: pornstar_migrate
+type: module
+description: Migrate pornstars from Hubtraffic API to Nodes.
+core: 8.x
+package: Migration
+dependencies:
+  - migrate
+  - migrate_plus
+  - migrate_tools

@@ -1,0 +1,9 @@
+name: tag_migrate
+type: module
+description: Migrate tags from Hubtraffic API to taxonomy_term.
+core: 8.x
+package: Migration
+dependencies:
+  - migrate
+  - migrate_plus
+  - migrate_tools
